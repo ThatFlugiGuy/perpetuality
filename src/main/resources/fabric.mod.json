@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "perpetuality",
+	"version": "${version}",
+	"name": "Perpetuality",
+	"description": "One day blinding stew",
+	"authors": [
+		"Flugi the"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/perpetuality/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.flugi.perpetuality.Perpetuality"
+		],
+		"fabric-datagen": [
+			"net.flugi.perpetuality.PerpetualityDataGenerator"
+		],
+		"client": [
+			"net.flugi.perpetuality.PerpetualityClient"
+		]
+	},
+	"mixins": [
+		"perpetuality.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
