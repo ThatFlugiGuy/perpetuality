@@ -3,7 +3,7 @@
 	"package": "net.flugi.perpetuality.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"ExampleMixin"
+
 	],
 	"injectors": {
 		"defaultRequire": 1

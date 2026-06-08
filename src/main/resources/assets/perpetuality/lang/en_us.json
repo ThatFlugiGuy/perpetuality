@@ -1,0 +1,10 @@
+{
+  "item.perpetuality.blinding_stew": "1 Day Blinding Stew",
+  "item.perpetuality.dubious_stew": "Dubious Stew",
+
+
+  "block.perpetuality.veiled_test_block": "hello im a block used to test the veiling mechanic, if you have me then dont",
+  "block.perpetuality.veil": "you shouldnt have this either",
+
+  "itemgroup.perpetuality.perpetuality_items": "Perpetuality"
+}
