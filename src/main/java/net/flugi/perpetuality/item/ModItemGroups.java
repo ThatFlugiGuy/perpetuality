@@ -19,6 +19,7 @@ public class ModItemGroups {
                     .entries((displayContext, entries) -> {
                         entries.add(ModItems.BLINDING_STEW);
                         entries.add(ModItems.DUBIOUS_STEW);
+                        entries.add(ModItems.LANTERN);
 
                     }).build());
 
