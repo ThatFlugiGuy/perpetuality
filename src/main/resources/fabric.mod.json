@@ -20,6 +20,9 @@
 		],
 		"fabric-datagen": [
 			"net.flugi.perpetuality.PerpetualityDataGenerator"
+		],
+		"client": [
+			"net.flugi.perpetuality.PerpetualityClient"
 		]
 	},
 	"mixins": [
