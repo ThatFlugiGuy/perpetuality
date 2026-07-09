@@ -5,12 +5,7 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.flugi.perpetuality.Perpetuality;
 import net.flugi.perpetuality.item.custom.BlindingStewItem;
 import net.flugi.perpetuality.item.custom.LanternItem;
-import net.minecraft.client.resource.ResourceIndex;
-import net.minecraft.component.type.*;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
-import net.minecraft.item.consume.ApplyEffectsConsumeEffect;
 import net.minecraft.registry.*;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
@@ -80,3 +75,4 @@ public class ModItems {
 
 
 }
+

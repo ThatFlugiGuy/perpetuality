@@ -12,6 +12,9 @@ import java.util.function.UnaryOperator;
 public class ModDataComponentTypes {
     public static final ComponentType<Boolean> LANTERN_STATE = register("lantern_state", builder -> builder.codec(Codec.BOOL));
     public static final ComponentType<Integer> LANTERN_CHARGE = register("lantern_charge",integerBuilder -> integerBuilder.codec(Codec.INT));
+
+    public static final ComponentType<Boolean> LANTERN_COOLDOWN = register("lantern_cooldown", builder -> builder.codec(Codec.BOOL));
+
     private  static  <T>ComponentType<T> register(String name, UnaryOperator<ComponentType.Builder<T>> builderOperator) {
         return Registry.register(Registries.DATA_COMPONENT_TYPE, Identifier.of(Perpetuality.MOD_ID, name),
                 builderOperator.apply(ComponentType.builder()).build());

@@ -28,3 +28,4 @@ public class Perpetuality implements ModInitializer {
 		return Identifier.of(MOD_ID, path);
 	}
 }
+
