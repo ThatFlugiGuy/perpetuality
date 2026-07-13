@@ -3,6 +3,8 @@ package net.flugi.perpetuality.item;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.flugi.perpetuality.Perpetuality;
+import net.flugi.perpetuality.block.ModBlocks;
+import net.flugi.perpetuality.component.ModDataComponentTypes;
 import net.flugi.perpetuality.item.custom.BlindingStewItem;
 import net.flugi.perpetuality.item.custom.LanternItem;
 import net.minecraft.item.*;
@@ -28,6 +30,9 @@ public class ModItems {
     public static final Item DUBIOUS_STEW = register("dubious_stew", Item::new, new Item.Settings());
 
     public static final Item LANTERN = register("lantern", LanternItem::new, new Item.Settings()
+            .component(ModDataComponentTypes.LANTERN_COOLDOWN, false)
+            .component(ModDataComponentTypes.LANTERN_CHARGE, 900)
+            .component(ModDataComponentTypes.LANTERN_STATE, false)
             .maxCount(1)
     );
 
@@ -53,6 +58,7 @@ public class ModItems {
                 entries.add(ModItems.BLINDING_STEW);
                 entries.add(ModItems.DUBIOUS_STEW);
                 entries.add(ModItems.LANTERN);
+                entries.add(ModBlocks.BLOCK_PARADIGM.asItem());
             })))
             .build();
 

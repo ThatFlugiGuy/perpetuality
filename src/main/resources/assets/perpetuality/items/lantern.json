@@ -1,0 +1,23 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "property": "minecraft:component",
+    "component": "perpetuality:lantern_state",
+    "cases": [
+      {
+        "when" : true,
+        "model": {
+          "type" : "minecraft:model",
+          "model" : "perpetuality:item/lantern_on"
+        }
+      },
+      {
+        "when" : false ,
+        "model": {
+          "type" : "minecraft:model",
+          "model" : "perpetuality:item/lantern_off"
+        }
+      }
+    ]
+  }
+}

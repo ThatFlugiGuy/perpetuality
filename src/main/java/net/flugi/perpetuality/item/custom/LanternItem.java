@@ -1,5 +1,6 @@
 package net.flugi.perpetuality.item.custom;
 
+import net.flugi.perpetuality.Perpetuality;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
@@ -20,7 +21,7 @@ import net.flugi.perpetuality.component.ModDataComponentTypes;
 public class LanternItem extends Item {
     public LanternItem(Settings settings) { super(settings); }
 
-    private static final int MAX_CHARGE = 400;
+    private static final int MAX_CHARGE = 900;
     private int ITEM_BAR_COLOR = ColorHelper.fromFloats(1F,0.77F, 0.53F, 0.88F);
 
 
@@ -59,15 +60,7 @@ public class LanternItem extends Item {
     @Override
     public void inventoryTick(ItemStack stack, ServerWorld world, Entity entity, @Nullable EquipmentSlot slot) {
 
-        if (stack.get(ModDataComponentTypes.LANTERN_CHARGE) == null) {
-            stack.set(ModDataComponentTypes.LANTERN_CHARGE,MAX_CHARGE);
-        }
-        if (stack.get(ModDataComponentTypes.LANTERN_STATE) == null) {
-            stack.set(ModDataComponentTypes.LANTERN_STATE,false);
-        }
-        if (stack.get(ModDataComponentTypes.LANTERN_COOLDOWN) == null) {
-            stack.set(ModDataComponentTypes.LANTERN_COOLDOWN, false);
-        }
+        boolean isCurrentlyHeld = ((entity instanceof PlayerEntity player && ( player.getOffHandStack() == stack ||  player.getStackInHand(player.getActiveHand()) == stack)));
 
 
         if (stack.get(ModDataComponentTypes.LANTERN_COOLDOWN)) {
@@ -80,7 +73,7 @@ public class LanternItem extends Item {
         if (!world.isClient()) {
             int currentCharge = stack.get(ModDataComponentTypes.LANTERN_CHARGE);
 
-            if (stack.get(ModDataComponentTypes.LANTERN_STATE) && currentCharge >0) {
+            if (stack.get(ModDataComponentTypes.LANTERN_STATE) && currentCharge >0 && isCurrentlyHeld) {
                 stack.set(ModDataComponentTypes.LANTERN_CHARGE,currentCharge-3);
             } else if (!stack.get(ModDataComponentTypes.LANTERN_STATE) && currentCharge < MAX_CHARGE) {
                 stack.set(ModDataComponentTypes.LANTERN_CHARGE,currentCharge+1);

@@ -2,6 +2,7 @@ package net.flugi.perpetuality;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.flugi.perpetuality.block.ModBlocks;
 import net.flugi.perpetuality.component.ModDataComponentTypes;
 import net.flugi.perpetuality.item.ModItems;
 import net.minecraft.server.MinecraftServer;
@@ -18,6 +19,7 @@ public class Perpetuality implements ModInitializer {
 	public void onInitialize() {
 
 		ModItems.initialize();
+		ModBlocks.initialize();
 
 		ModDataComponentTypes.registerDataComponentTypes();
 
