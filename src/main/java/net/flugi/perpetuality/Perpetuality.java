@@ -4,6 +4,7 @@ import net.fabricmc.api.ModInitializer;
 
 import net.flugi.perpetuality.block.ModBlocks;
 import net.flugi.perpetuality.component.ModDataComponentTypes;
+import net.flugi.perpetuality.effect.ModEffects;
 import net.flugi.perpetuality.item.ModItems;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.Identifier;
@@ -15,11 +16,16 @@ public class Perpetuality implements ModInitializer {
 	public static final String MOD_ID = "perpetuality";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
+
+
+
+
 	@Override
 	public void onInitialize() {
 
 		ModItems.initialize();
 		ModBlocks.initialize();
+		ModEffects.initialize();
 
 		ModDataComponentTypes.registerDataComponentTypes();
 

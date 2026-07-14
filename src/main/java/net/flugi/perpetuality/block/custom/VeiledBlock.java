@@ -1,9 +1,6 @@
 package net.flugi.perpetuality.block.custom;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.ShapeContext;
-import net.minecraft.block.TransparentBlock;
+import net.minecraft.block.*;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
@@ -43,6 +40,15 @@ public class VeiledBlock extends TransparentBlock {
         }
         return VoxelShapes.empty();
     }
+
+    public static Function<BlockState, BlockRenderType> cb = null;
+
+    @Override
+    protected BlockRenderType getRenderType(BlockState state) {
+        if (cb != null) return cb.apply(state);
+        return super.getRenderType(state);
+    }
+
 
     @Override
     protected boolean canReplace(BlockState state, ItemPlacementContext context) {
