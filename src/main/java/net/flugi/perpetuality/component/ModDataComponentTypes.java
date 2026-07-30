@@ -15,6 +15,9 @@ public class ModDataComponentTypes {
 
     public static final ComponentType<Boolean> LANTERN_COOLDOWN = register("lantern_cooldown", builder -> builder.codec(Codec.BOOL));
 
+
+
+
     private  static  <T>ComponentType<T> register(String name, UnaryOperator<ComponentType.Builder<T>> builderOperator) {
         return Registry.register(Registries.DATA_COMPONENT_TYPE, Identifier.of(Perpetuality.MOD_ID, name),
                 builderOperator.apply(ComponentType.builder()).build());

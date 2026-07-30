@@ -1,6 +1,9 @@
 package net.flugi.perpetuality.item.custom;
 
 import net.flugi.perpetuality.Perpetuality;
+import net.flugi.perpetuality.bulshittt.ModEntities;
+import net.flugi.perpetuality.bulshittt.view.AntimonicView;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
@@ -11,6 +14,7 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
+import net.minecraft.util.Unit;
 import net.minecraft.util.math.ColorHelper;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
@@ -32,6 +36,15 @@ public class LanternItem extends Item {
 
         if (!stack.get(ModDataComponentTypes.LANTERN_COOLDOWN)) {
             user.swingHand(hand);
+
+            user.setAttached(ModEntities.CONTRADICTORY, Unit.INSTANCE);
+            //user.removeAttached(ModEntities.CONTRADICTORY);
+
+
+            if (world.isClient()) {
+                MinecraftClient client = MinecraftClient.getInstance();
+                client.worldRenderer.reload();
+            }
 
             if (!world.isClient()) {
 
@@ -61,6 +74,8 @@ public class LanternItem extends Item {
     public void inventoryTick(ItemStack stack, ServerWorld world, Entity entity, @Nullable EquipmentSlot slot) {
 
         boolean isCurrentlyHeld = ((entity instanceof PlayerEntity player && ( player.getOffHandStack() == stack ||  player.getStackInHand(player.getActiveHand()) == stack)));
+
+
 
 
         if (stack.get(ModDataComponentTypes.LANTERN_COOLDOWN)) {

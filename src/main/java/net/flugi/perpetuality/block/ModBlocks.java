@@ -2,6 +2,7 @@ package net.flugi.perpetuality.block;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.flugi.perpetuality.Perpetuality;
+import net.flugi.perpetuality.block.custom.UncannyBlock;
 import net.flugi.perpetuality.block.custom.VeiledBlock;
 import net.flugi.perpetuality.item.ModItems;
 import net.minecraft.block.AbstractBlock;
@@ -23,26 +24,34 @@ public class ModBlocks {
 
 
 
-        public static final Block BLOCK_PARADIGM = register(
-                "block_paradigm",
-                VeiledBlock.of(false),
-                AbstractBlock.Settings.create()
-                        .suffocates(Blocks::never)
-                        .blockVision(Blocks::never)
-                        .noBlockBreakParticles()
-                        .strength(0.5f)
-                , true
+    public static final Block BLOCK_PARADIGM = register(
+            "block_paradigm",
+            VeiledBlock.of(true),
+            AbstractBlock.Settings.create()
+                    //.suffocates(Blocks::never)
+                    .blockVision(Blocks::never)
+                    .strength(0.5f)
+                    , true
+    );
+
+    public static final Block BLOCK_EVILPARADIGM = register(
+            "block_evilparadigm",
+            VeiledBlock.of(false),
+            AbstractBlock.Settings.create()
+                    //.suffocates(Blocks::never)
+                    .blockVision(Blocks::never)
+                    .strength(0.5f)
+            , true
+    );
+
+
+
+
+
+        public static final Block UNCANNY_CAT_BLOCK = register("uncanny_cat_block", UncannyBlock::new,AbstractBlock.Settings.create()
+                .strength(1f)
+        , true
         );
-
-
-
-
-
-
-
-
-
-
 
 
 
