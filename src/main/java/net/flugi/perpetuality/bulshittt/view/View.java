@@ -4,7 +4,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.World;
 
 import java.util.function.BiConsumer;
-
+/*
 public interface View {
     void open(World world, PlayerEntity user);
 
@@ -20,3 +20,4 @@ public interface View {
 
     void reset(PlayerEntity user);
 }
+*/

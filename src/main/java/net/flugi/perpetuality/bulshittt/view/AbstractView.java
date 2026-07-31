@@ -2,7 +2,7 @@ package net.flugi.perpetuality.bulshittt.view;
 
 
 import java.util.function.Consumer;
-
+/*
 public abstract class AbstractView<T> implements View {
 
     protected Consumer<T> clientCallback = d -> {
@@ -17,4 +17,4 @@ public abstract class AbstractView<T> implements View {
     }
 
 
-}
+}*/

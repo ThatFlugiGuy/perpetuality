@@ -57,7 +57,7 @@ public class CAntimonicView {
                         ? BlockRenderType.INVISIBLE : BlockRenderType.MODEL;*/
 
     }
-
+    /*
     public static final Identifier YOU = Perpetuality.id("you");
 
     private static void recurseImages(File file, int depth) {
@@ -80,7 +80,7 @@ public class CAntimonicView {
         return traces.computeIfAbsent(old,
                 k -> ids.get(PerpetualityClient.world().getRandom().nextInt(ids.size()))
         );
-    }
+    }*/
 
     private static boolean contradictory = false;
 
@@ -89,10 +89,10 @@ public class CAntimonicView {
         boolean result = Perpetuality.self().hasAttached(ModEntities.CONTRADICTORY);
         if (result != contradictory) {
             //PerpetualityClient.AFFAIRS.enableFor(Perspectives.OBSCURED, 20);
-            PerpetualityClient.nextTick(() -> {
+            /*PerpetualityClient.nextTick(() -> {
                 MinecraftClient client = MinecraftClient.getInstance();
                 client.worldRenderer.reload();
-            });
+            });*/
             contradictory = result;
         }
         return result;

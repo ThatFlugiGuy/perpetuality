@@ -3,7 +3,7 @@ package net.flugi.perpetuality;
 import net.fabricmc.api.ModInitializer;
 
 import net.flugi.perpetuality.block.ModBlocks;
-import net.flugi.perpetuality.bulshittt.ModNetworking;
+//import net.flugi.perpetuality.bulshittt.ModNetworking;
 import net.flugi.perpetuality.component.ModDataComponentTypes;
 import net.flugi.perpetuality.effect.ModEffects;
 import net.flugi.perpetuality.item.ModItems;
@@ -40,7 +40,7 @@ public class Perpetuality implements ModInitializer {
 
 		ModItems.initialize();
 		ModBlocks.initialize();
-		ModNetworking.init();
+		//ModNetworking.init();
 		ModEffects.initialize();
 
 		ModDataComponentTypes.registerDataComponentTypes();

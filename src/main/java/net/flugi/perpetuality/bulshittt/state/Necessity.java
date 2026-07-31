@@ -1,5 +1,5 @@
 package net.flugi.perpetuality.bulshittt.state;
-
+/*
 public class Necessity extends Gestalt {
     boolean fired = false;
     Runnable cb;
@@ -16,4 +16,4 @@ public class Necessity extends Gestalt {
             this.cb.run();
         }
     }
-}
+}*/

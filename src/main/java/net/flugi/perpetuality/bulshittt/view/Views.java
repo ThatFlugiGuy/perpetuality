@@ -15,10 +15,10 @@ import net.flugi.perpetuality.Perpetuality;
 
 import java.util.List;
 import java.util.function.Predicate;
-
+/*
 public class Views {
     private static final BiMap<Identifier, View> entries = HashBiMap.create();
-    public static final Codecs.IdMapper<Identifier, ? extends View> MAPPER = new Codecs.IdMapper<>();
+    /*public static final Codecs.IdMapper<Identifier, ? extends View> MAPPER = new Codecs.IdMapper<>();
     public static final Codec<View> CODEC = Identifier.CODEC.flatXmap(
             id -> DataResult.success(entries.get(id)),
             view -> DataResult.success(entries.inverse().get(view))
@@ -31,7 +31,7 @@ public class Views {
         entries.put(Perpetuality.id(id), v);
         return v;
     }
-
+    /*
     @Nullable
     public static View get(Identifier id) {
         return entries.get(id);
@@ -53,5 +53,5 @@ public class Views {
 
 
 
-}
+}*/
 

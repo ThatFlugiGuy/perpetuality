@@ -7,12 +7,12 @@ import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockRenderLayerMap;
 import net.flugi.perpetuality.block.ModBlocks;
 import net.flugi.perpetuality.block.custom.VeiledBlock;
-import net.flugi.perpetuality.bulshittt.client.gfx.AntimonicConsistencyProperty;
+//import net.flugi.perpetuality.bulshittt.client.gfx.AntimonicConsistencyProperty;
 import net.flugi.perpetuality.bulshittt.client.view.CAntimonicView;
-import net.flugi.perpetuality.bulshittt.net.S2CAnsibleQuale;
-import net.flugi.perpetuality.bulshittt.state.Necessity;
-import net.flugi.perpetuality.bulshittt.state.Sachverhalten;
-import net.flugi.perpetuality.bulshittt.view.Views;
+//import net.flugi.perpetuality.bulshittt.net.S2CAnsibleQuale;
+//import net.flugi.perpetuality.bulshittt.state.Necessity;
+//import net.flugi.perpetuality.bulshittt.state.Sachverhalten;
+//import net.flugi.perpetuality.bulshittt.view.Views;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.render.BlockRenderLayer;
@@ -24,21 +24,21 @@ public class PerpetualityClient implements ClientModInitializer {
 
 
 
-    public static final Sachverhalten AFFAIRS = new Sachverhalten();
+    //public static final Sachverhalten AFFAIRS = new Sachverhalten();
 
 
     @Override
     public void onInitializeClient() {
 
-        Views.ANTIMONY.setCallback(c -> c.ap(CAntimonicView::open));
+        //Views.ANTIMONY.setCallback(c -> c.ap(CAntimonicView::open));
 
         Perpetuality.interiority = () -> MinecraftClient.getInstance().player;
-
+        /*
         BooleanProperties.ID_MAPPER.put(
                 Perpetuality.id("antimonic_consistency"),
                 AntimonicConsistencyProperty.CODEC
-        );
-
+        );*/
+        /*
         ClientPlayNetworking.registerGlobalReceiver(
                 S2CAnsibleQuale.ID,
                 (payload, context) -> {
@@ -48,7 +48,7 @@ public class PerpetualityClient implements ClientModInitializer {
                         payload.view().open(world, subject);
                     }
                 }
-        );
+        );*/
 
 
         VeiledBlock.solid = CAntimonicView::solidifyParadox;
@@ -64,7 +64,7 @@ public class PerpetualityClient implements ClientModInitializer {
     public static ClientWorld world() {
         return MinecraftClient.getInstance().world;
     }
-
+    /*
     public static void nextTick(Runnable r) {
         schedule(r, 1);
     }
@@ -73,7 +73,7 @@ public class PerpetualityClient implements ClientModInitializer {
         synchronized (AFFAIRS) {
             AFFAIRS.enableFor(new Necessity(r), ticks);
         }
-    }
+    }*/
 
 
     public static ClientPlayerEntity player() {

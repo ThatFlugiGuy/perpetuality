@@ -8,8 +8,9 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemDisplayContext;
 import net.minecraft.item.ItemStack;
 import org.jetbrains.annotations.Nullable;
-
+/*
 public class AntimonicConsistencyProperty implements BooleanProperty {
+
     public static final MapCodec<AntimonicConsistencyProperty> CODEC = MapCodec.unit(new AntimonicConsistencyProperty());
 
     @Override
@@ -22,3 +23,4 @@ public class AntimonicConsistencyProperty implements BooleanProperty {
         return CODEC;
     }
 }
+*/

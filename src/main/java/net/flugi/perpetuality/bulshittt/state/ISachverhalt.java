@@ -1,5 +1,5 @@
 package net.flugi.perpetuality.bulshittt.state;
-
+/*
 public interface ISachverhalt {
     void enable();
 
@@ -12,4 +12,4 @@ public interface ISachverhalt {
     boolean isActive();
 
     int ticksLeft();
-}
+}*/

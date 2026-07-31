@@ -1,5 +1,5 @@
 package net.flugi.perpetuality.bulshittt.state;
-
+/*
 public class Gestalt implements ISachverhalt {
     protected int ticksLeft = -1;
 
@@ -41,4 +41,4 @@ public class Gestalt implements ISachverhalt {
     public int ticksLeft() {
         return ticksLeft;
     }
-}
+}*/

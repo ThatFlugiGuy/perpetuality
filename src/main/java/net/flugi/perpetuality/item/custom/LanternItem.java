@@ -1,8 +1,9 @@
 package net.flugi.perpetuality.item.custom;
 
 import net.flugi.perpetuality.Perpetuality;
+import net.flugi.perpetuality.PerpetualityClient;
 import net.flugi.perpetuality.bulshittt.ModEntities;
-import net.flugi.perpetuality.bulshittt.view.AntimonicView;
+//import net.flugi.perpetuality.bulshittt.view.AntimonicView;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;

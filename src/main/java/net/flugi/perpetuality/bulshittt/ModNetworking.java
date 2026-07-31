@@ -1,8 +1,8 @@
 package net.flugi.perpetuality.bulshittt;
 
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
-import net.flugi.perpetuality.bulshittt.net.S2CAnsibleQuale;
-
+//import net.flugi.perpetuality.bulshittt.net.S2CAnsibleQuale;
+/*
 public class ModNetworking {
     public static void init() {
 
@@ -13,4 +13,4 @@ public class ModNetworking {
         );
 
     }
-}
+}*/

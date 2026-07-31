@@ -4,11 +4,11 @@ import net.minecraft.network.PacketByteBuf;
 import net.minecraft.network.codec.PacketCodec;
 import net.minecraft.network.packet.CustomPayload;
 import net.flugi.perpetuality.Perpetuality;
-import net.flugi.perpetuality.bulshittt.view.View;
-import net.flugi.perpetuality.bulshittt.view.Views;
+//import net.flugi.perpetuality.bulshittt.view.View;
+//import net.flugi.perpetuality.bulshittt.view.Views;
 
 import java.util.function.Consumer;
-
+/*
 public record S2CAnsibleQuale(View view) implements CustomPayload {
     public static Id<S2CAnsibleQuale> ID = Perpetuality.payloadId("ansiblate_qualia");
     public static final PacketCodec<PacketByteBuf, S2CAnsibleQuale> CODEC =
@@ -30,3 +30,4 @@ public record S2CAnsibleQuale(View view) implements CustomPayload {
         callback = sendPayloadCallback;
     }
 }
+*/

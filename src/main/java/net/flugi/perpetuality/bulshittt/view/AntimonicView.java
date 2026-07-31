@@ -5,7 +5,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.Unit;
 import net.minecraft.world.World;
 
-
+/*
 public class AntimonicView extends AbstractView<View.Context<World, PlayerEntity>> {
 
     @Override
@@ -27,6 +27,4 @@ public class AntimonicView extends AbstractView<View.Context<World, PlayerEntity
         user.removeAttached(ModEntities.CONTRADICTORY);
     }
 
-
-
-}
+}*/

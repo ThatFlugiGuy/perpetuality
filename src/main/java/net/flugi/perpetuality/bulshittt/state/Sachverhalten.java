@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-
+/*
 public final class Sachverhalten {
     private final Map<Identifier, ISachverhalt> states = new HashMap<>();
     private final List<ISachverhalt> anonymousStates = new ReferenceArrayList<>();
@@ -47,4 +47,4 @@ public final class Sachverhalten {
     public boolean isActive(Identifier id) {
         return states.containsKey(id);
     }
-}
+}*/
