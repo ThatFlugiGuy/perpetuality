@@ -45,7 +45,8 @@ public class Perpetuality implements ModInitializer {
 
 		ModDataComponentTypes.registerDataComponentTypes();
 
-		LOGGER.info("evil soup evil soup evil soup evil soup evil soup evil soup");
+		LOGGER.info("CONSIDER: A droplet of rain pierces the still water.");
+		LOGGER.info("THOSE WHO NOSE 💀💀👃");
 	}
 
 	public static Identifier id(String path) {
