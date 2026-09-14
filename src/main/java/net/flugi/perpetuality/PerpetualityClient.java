@@ -24,13 +24,12 @@ public class PerpetualityClient implements ClientModInitializer {
 
 
 
-    //public static final Sachverhalten AFFAIRS = new Sachverhalten();
-
-
     @Override
     public void onInitializeClient() {
 
         //Views.ANTIMONY.setCallback(c -> c.ap(CAntimonicView::open));
+
+
 
         Perpetuality.interiority = () -> MinecraftClient.getInstance().player;
         /*

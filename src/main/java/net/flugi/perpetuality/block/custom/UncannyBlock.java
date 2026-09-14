@@ -58,14 +58,14 @@ public class UncannyBlock extends Block {
         }
 
         if (world.isClient()) {
-            HudRenderCallback.EVENT.register(((drawContext, renderTickCounter) -> {
+            /*HudRenderCallback.EVENT.register(((drawContext, renderTickCounter) -> {
 
                 int screenWidth = drawContext.getScaledWindowWidth();
                 int screenHeight = drawContext.getScaledWindowHeight();
                 Identifier texture = Identifier.of(Perpetuality.MOD_ID, "textures/uncanny.png");
                 drawContext.drawTexture(RenderPipelines.GUI_TEXTURED, texture, 0, 0, 0, 0, screenWidth, screenHeight,screenWidth,screenHeight);
 
-            }));
+            }));*/
         }
 
 

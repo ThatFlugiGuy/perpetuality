@@ -1,0 +1,10 @@
+
+
+{
+  "variants": {
+    "facing=east": { "model": "perpetuality:block/crockpot" },
+    "facing=south": { "model": "perpetuality:block/crockpot", "y": 90 },
+    "facing=west": { "model": "perpetuality:block/crockpot", "y": 180 },
+    "facing=north": { "model": "perpetuality:block/crockpot", "y": 270 }
+  }
+}

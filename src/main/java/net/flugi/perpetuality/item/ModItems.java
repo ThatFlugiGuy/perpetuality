@@ -29,6 +29,11 @@ public class ModItems {
 
     public static final Item DUBIOUS_STEW = register("dubious_stew", Item::new, new Item.Settings());
 
+    public static final Item GENERIC_STEW = register("generic_stew", Item::new, new Item.Settings()
+            .maxCount(16)
+            .useRemainder(Items.BOWL)
+    );
+
     public static final Item LANTERN = register("lantern", LanternItem::new, new Item.Settings()
             .component(ModDataComponentTypes.LANTERN_COOLDOWN, false)
             .component(ModDataComponentTypes.LANTERN_CHARGE, 900)

@@ -2,13 +2,12 @@ package net.flugi.perpetuality.block;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.flugi.perpetuality.Perpetuality;
+import net.flugi.perpetuality.block.custom.PotBlock;
 import net.flugi.perpetuality.block.custom.UncannyBlock;
 import net.flugi.perpetuality.block.custom.VeiledBlock;
-import net.flugi.perpetuality.item.ModItems;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import net.minecraft.client.sound.Sound;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
@@ -44,7 +43,11 @@ public class ModBlocks {
             , true
     );
 
-
+    public static final Block POT_BLOCK  = register("pot_block", PotBlock::new, AbstractBlock.Settings.create()
+            .strength(1f)
+            .luminance(PotBlock::getLuminance)
+            , true
+    );
 
 
 
