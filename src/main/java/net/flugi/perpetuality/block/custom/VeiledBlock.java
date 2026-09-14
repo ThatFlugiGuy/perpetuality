@@ -1,6 +1,6 @@
 package net.flugi.perpetuality.block.custom;
 
-import net.flugi.perpetuality.bulshittt.ModEntities;
+//import net.flugi.perpetuality.bulshittt.ModEntities;
 import net.minecraft.block.*;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.util.math.BlockPos;
@@ -45,10 +45,10 @@ public class VeiledBlock extends TransparentBlock {
         return VoxelShapes.empty();
     }
 
-    @Override
+    /*@Override
     protected boolean canReplace(BlockState state, ItemPlacementContext context) {
         return (context.getPlayer().hasAttached(ModEntities.CONTRADICTORY) ^ hidden);
-    }
+    }*/
 
     /*
     @Override

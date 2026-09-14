@@ -5,8 +5,8 @@ import net.fabricmc.api.ModInitializer;
 import net.flugi.perpetuality.block.ModBlocks;
 //import net.flugi.perpetuality.bulshittt.ModNetworking;
 import net.flugi.perpetuality.block.entity.ModBlockEntities;
-import net.flugi.perpetuality.component.ModDataComponentTypes;
-import net.flugi.perpetuality.effect.ModEffects;
+//import net.flugi.perpetuality.component.ModDataComponentTypes;
+//import net.flugi.perpetuality.effect.ModEffects;
 import net.flugi.perpetuality.item.ModItems;
 import net.flugi.perpetuality.recipe.ModRecipes;
 import net.minecraft.entity.player.PlayerEntity;
@@ -43,11 +43,11 @@ public class Perpetuality implements ModInitializer {
 		ModItems.initialize();
 		ModBlocks.initialize();
 		//ModNetworking.init();
-		ModEffects.initialize();
+		//ModEffects.initialize();
 		ModRecipes.initialize();
 		ModBlockEntities.initialize();
 
-		ModDataComponentTypes.registerDataComponentTypes();
+		//ModDataComponentTypes.registerDataComponentTypes();
 
 		LOGGER.info("evil soup evil soup evil soup evil soup evil soup evil soup");
 	}

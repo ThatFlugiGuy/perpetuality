@@ -8,7 +8,7 @@ import net.fabricmc.fabric.api.client.rendering.v1.BlockRenderLayerMap;
 import net.flugi.perpetuality.block.ModBlocks;
 import net.flugi.perpetuality.block.custom.VeiledBlock;
 //import net.flugi.perpetuality.bulshittt.client.gfx.AntimonicConsistencyProperty;
-import net.flugi.perpetuality.bulshittt.client.view.CAntimonicView;
+//import net.flugi.perpetuality.bulshittt.client.view.CAntimonicView;
 //import net.flugi.perpetuality.bulshittt.net.S2CAnsibleQuale;
 //import net.flugi.perpetuality.bulshittt.state.Necessity;
 //import net.flugi.perpetuality.bulshittt.state.Sachverhalten;
@@ -50,11 +50,11 @@ public class PerpetualityClient implements ClientModInitializer {
         );*/
 
 
-        VeiledBlock.solid = CAntimonicView::solidifyParadox;
+        /*VeiledBlock.solid = CAntimonicView::solidifyParadox;
         BlockRenderLayerMap.putBlock(ModBlocks.BLOCK_PARADIGM, BlockRenderLayer.CUTOUT);
         BlockRenderLayerMap.putBlock(ModBlocks.BLOCK_EVILPARADIGM, BlockRenderLayer.CUTOUT);
         ClientPlayConnectionEvents.JOIN.register((handler, sender, client) -> CAntimonicView.setup());
-
+        */
 
     }
 

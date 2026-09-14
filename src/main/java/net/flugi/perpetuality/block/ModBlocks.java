@@ -32,15 +32,6 @@ public class ModBlocks {
                     , true
     );
 
-    public static final Block BLOCK_EVILPARADIGM = register(
-            "block_evilparadigm",
-            VeiledBlock.of(false),
-            AbstractBlock.Settings.create()
-                    //.suffocates(Blocks::never)
-                    .blockVision(Blocks::never)
-                    .strength(0.5f)
-            , true
-    );
 
     public static final Block POT_BLOCK  = register("pot_block", PotBlock::new, AbstractBlock.Settings.create()
             .strength(1f)
