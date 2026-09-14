@@ -3,7 +3,6 @@ package net.flugi.perpetuality.block;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.flugi.perpetuality.Perpetuality;
 import net.flugi.perpetuality.block.custom.PotBlock;
-import net.flugi.perpetuality.block.custom.UncannyBlock;
 import net.flugi.perpetuality.block.custom.VeiledBlock;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -51,10 +50,7 @@ public class ModBlocks {
 
 
 
-        public static final Block UNCANNY_CAT_BLOCK = register("uncanny_cat_block", UncannyBlock::new,AbstractBlock.Settings.create()
-                .strength(1f)
-        , true
-        );
+
 
 
 
