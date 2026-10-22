@@ -41,13 +41,11 @@ public class PotBlockEntity extends BlockEntity {
     private int ingredientCount;
     private final DefaultedList<ItemStack> stewIngredients = DefaultedList.ofSize(6, ItemStack.EMPTY);
 
-    private boolean waterState = false;
+
     private int boilTimer = 0;
     private boolean isReady = false;
 
-    public boolean getWaterState() {
-        return waterState;
-    }
+
 
 
     /*

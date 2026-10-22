@@ -9,14 +9,14 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.pathing.NavigationType;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.item.ItemStack;
+import net.minecraft.item.*;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.EnumProperty;
+import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
@@ -33,11 +33,15 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 import org.jspecify.annotations.Nullable;
+import net.minecraft.item.Items;
 
+import static net.minecraft.item.BucketItem.getEmptiedStack;
 
 public class PotBlock extends BlockWithEntity {
 
     public static final EnumProperty<Direction> FACING = HorizontalFacingBlock.FACING;
+    public static final IntProperty LEVEL = IntProperty.of("level",0,6);
+    public static final BooleanProperty WATER = BooleanProperty.of("water");
 
     private static final VoxelShape SHAPE = VoxelShapes.union(
             Block.createColumnShape(16,0,4),
@@ -49,6 +53,8 @@ public class PotBlock extends BlockWithEntity {
         super(settings);
 
         setDefaultState(getDefaultState().with(FACING, Direction.NORTH));
+        setDefaultState(getDefaultState().with(LEVEL, 0));
+        setDefaultState(getDefaultState().with(WATER, false));
     }
 
     @Override
@@ -65,13 +71,49 @@ public class PotBlock extends BlockWithEntity {
 
     @Override
     protected ActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if ((world.getBlockEntity(pos) instanceof PotBlockEntity potBlockEntity) && !(world.isClient())) {
+        if (world.getBlockEntity(pos) instanceof PotBlockEntity potBlockEntity) {
 
-            if (potBlockEntity.addIngredient(player, stack) || potBlockEntity.collectStew( player, stack, (ServerWorld) world)) {
+            boolean IS_FULL = state.get(WATER);
+
+            if (world.isClient()) {
+                // this is just cuz i want the sound to play and im a stupid chud so uhh idk yea
+                if (!IS_FULL && state.get(LEVEL) == 0 && stack.getItem() == Items.WATER_BUCKET) {
+                    world.playSound(player, pos, SoundEvents.ITEM_BUCKET_EMPTY, SoundCategory.BLOCKS, 1.0F, 1.0F);
+                }
+            }else{
+
+            //filling with water
+            if (!IS_FULL && potBlockEntity.getIngredientCount() ==0 && stack.getItem() == Items.WATER_BUCKET){
+                Perpetuality.LOGGER.info("fille");
+                stack.decrementUnlessCreative(1, player);
+                if (!player.isInCreativeMode()){player.giveOrDropStack(new ItemStack(Items.BUCKET));}
+                world.setBlockState(pos, state.with(WATER, true));
+                world.playSound(player, pos, SoundEvents.ITEM_BUCKET_EMPTY, SoundCategory.BLOCKS, 1.0F, 1.0F);
+                return ActionResult.SUCCESS_SERVER;
+            }
+
+            // setup/first stew
+
+            if (IS_FULL && potBlockEntity.addIngredient(player, stack)) {
+                if (potBlockEntity.getIngredientCount() == 6 ){
+                    world.setBlockState(pos, state.with(WATER, false).with(LEVEL, 6));
+                    Perpetuality.LOGGER.info("yo gurt your soup is ready");
+                }
                 player.sendMessage(Text.literal(String.valueOf(potBlockEntity.getStewIngredients())), true);
                 return ActionResult.SUCCESS_SERVER;
             }
-        }
+
+
+            // non setup normal perpetual stew shit
+            if (potBlockEntity.getIngredientCount() >0 && !IS_FULL ) {
+                if ((potBlockEntity.addIngredient(player, stack) || potBlockEntity.collectStew( player, stack, (ServerWorld) world))) {
+                    player.sendMessage(Text.literal(String.valueOf(potBlockEntity.getStewIngredients())), true);
+                    Perpetuality.LOGGER.info(String.valueOf(potBlockEntity.getIngredientCount()));
+                    world.setBlockState(pos, state.with(LEVEL, potBlockEntity.getIngredientCount()));
+                    return ActionResult.SUCCESS_SERVER;
+                }
+            }
+        }}
         return ActionResult.CONSUME;
     }
 
@@ -102,7 +144,7 @@ public class PotBlock extends BlockWithEntity {
     }
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(FACING);
+        builder.add(FACING).add(LEVEL).add(WATER);
     }
 
 

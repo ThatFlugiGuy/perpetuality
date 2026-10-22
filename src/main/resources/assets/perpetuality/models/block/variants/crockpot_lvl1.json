@@ -1,0 +1,24 @@
+{
+	"format_version": "1.21.6",
+	"credit": "made by flugi",
+	"texture_size": [64, 64],
+	"textures": {
+		"4": "perpetuality:block/testsilly",
+		"particle": "perpetuality:block/crockpot"
+	},
+	"elements": [
+		{
+			"from": [3, 5, 3],
+			"to": [13, 5, 13],
+			"rotation": {"angle": 0, "axis": "y", "origin": [3, 5.1, 3]},
+			"faces": {
+				"north": {"uv": [0, 0, 2.5, 0], "texture": "#4"},
+				"east": {"uv": [0, 0, 2.5, 0], "texture": "#4"},
+				"south": {"uv": [0, 0, 2.5, 0], "texture": "#4"},
+				"west": {"uv": [0, 0, 2.5, 0], "texture": "#4"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#4"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#4"}
+			}
+		}
+	]
+}

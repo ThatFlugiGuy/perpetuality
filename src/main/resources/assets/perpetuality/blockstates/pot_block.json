@@ -1,10 +1,91 @@
-
-
 {
-  "variants": {
-    "facing=east": { "model": "perpetuality:block/crockpot" },
-    "facing=south": { "model": "perpetuality:block/crockpot", "y": 90 },
-    "facing=west": { "model": "perpetuality:block/crockpot", "y": 180 },
-    "facing=north": { "model": "perpetuality:block/crockpot", "y": 270 }
-  }
+  "multipart": [
+    {
+      "when": {
+        "OR": [
+          {
+            "facing": "east"
+          },
+          {
+            "facing": "west"
+          }
+        ]
+      },
+      "apply": {
+        "model": "perpetuality:block/crockpot"
+      }
+    },
+    {
+      "when": {
+        "OR": [
+          {
+            "facing": "south"
+          },
+          {
+            "facing": "north"
+          }
+        ]
+      },
+      "apply": {
+        "model": "perpetuality:block/crockpot",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "level": "1"
+      },
+      "apply": {
+        "model": "perpetuality:block/variants/crockpot_lvl1"
+      }
+    },
+    {
+      "when": {
+        "level": "2"
+      },
+      "apply": {
+        "model": "perpetuality:block/variants/crockpot_lvl2"
+      }
+    },
+    {
+      "when": {
+        "level": "3"
+      },
+      "apply": {
+        "model": "perpetuality:block/variants/crockpot_lvl3"
+      }
+    },
+    {
+      "when": {
+        "level": "4"
+      },
+      "apply": {
+        "model": "perpetuality:block/variants/crockpot_lvl4"
+      }
+    },
+    {
+      "when": {
+        "level": "5"
+      },
+      "apply": {
+        "model": "perpetuality:block/variants/crockpot_lvl5"
+      }
+    },
+    {
+      "when": {
+        "level": "6"
+      },
+      "apply": {
+        "model": "perpetuality:block/variants/crockpot_lvl6"
+      }
+    },
+    {
+      "when": {
+        "water": "true"
+      },
+      "apply": {
+        "model": "perpetuality:block/variants/crockpot_water"
+      }
+    }
+  ]
 }

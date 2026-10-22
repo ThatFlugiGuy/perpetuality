@@ -19,6 +19,7 @@ import net.minecraft.client.render.BlockRenderLayer;
 import net.minecraft.client.render.item.property.bool.BooleanProperties;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.world.chunk.ChunkSection;
 
 public class PerpetualityClient implements ClientModInitializer {
 
@@ -27,35 +28,11 @@ public class PerpetualityClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
 
-        //Views.ANTIMONY.setCallback(c -> c.ap(CAntimonicView::open));
 
+        BlockRenderLayerMap.putBlock(ModBlocks.POT_BLOCK, BlockRenderLayer.TRANSLUCENT);
 
 
         Perpetuality.interiority = () -> MinecraftClient.getInstance().player;
-        /*
-        BooleanProperties.ID_MAPPER.put(
-                Perpetuality.id("antimonic_consistency"),
-                AntimonicConsistencyProperty.CODEC
-        );*/
-        /*
-        ClientPlayNetworking.registerGlobalReceiver(
-                S2CAnsibleQuale.ID,
-                (payload, context) -> {
-                    ClientWorld world = world();
-                    PlayerEntity subject = player();
-                    if (world != null && subject != null) {
-                        payload.view().open(world, subject);
-                    }
-                }
-        );*/
-
-
-        /*VeiledBlock.solid = CAntimonicView::solidifyParadox;
-        BlockRenderLayerMap.putBlock(ModBlocks.BLOCK_PARADIGM, BlockRenderLayer.CUTOUT);
-        BlockRenderLayerMap.putBlock(ModBlocks.BLOCK_EVILPARADIGM, BlockRenderLayer.CUTOUT);
-        ClientPlayConnectionEvents.JOIN.register((handler, sender, client) -> CAntimonicView.setup());
-        */
-
     }
 
 
@@ -63,16 +40,7 @@ public class PerpetualityClient implements ClientModInitializer {
     public static ClientWorld world() {
         return MinecraftClient.getInstance().world;
     }
-    /*
-    public static void nextTick(Runnable r) {
-        schedule(r, 1);
-    }
 
-    public static void schedule(Runnable r, int ticks) {
-        synchronized (AFFAIRS) {
-            AFFAIRS.enableFor(new Necessity(r), ticks);
-        }
-    }*/
 
 
     public static ClientPlayerEntity player() {
