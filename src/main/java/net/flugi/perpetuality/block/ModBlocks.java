@@ -33,7 +33,7 @@ public class ModBlocks {
     );
     //:: YOU'LL HAVE TO WAIT AND SEE :://
 
-    //a
+
 
     //loot table of pot not really working ):
     // neither does it have the block breaking overlay
