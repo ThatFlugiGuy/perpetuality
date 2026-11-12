@@ -2,7 +2,7 @@ package net.flugi.perpetuality.recipe;
 
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-//import net.flugi.perpetuality.recipe.PotRecipe;
+
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.RegistryByteBuf;
 import net.minecraft.network.codec.PacketCodec;

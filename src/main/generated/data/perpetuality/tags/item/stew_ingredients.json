@@ -2,7 +2,14 @@
   "replace": true,
   "values": [
     "#perpetuality:meats",
+    "#perpetuality:mushrooms",
     "#perpetuality:vegetables",
-    "#perpetuality:taglasso"
+    "#perpetuality:taglasso",
+    "#perpetuality:fruits",
+    "minecraft:dried_kelp",
+    "minecraft:bread",
+    "minecraft:wheat",
+    "minecraft:cocoa_beans",
+    "minecraft:milk_bucket"
   ]
 }

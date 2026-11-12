@@ -1,0 +1,10 @@
+{
+  "type": "perpetuality:pot",
+  "ingredients": [
+    "#perpetuality:stew_ingredients",
+    "#perpetuality:taglasso"
+  ],
+  "result": {
+    "id": "perpetuality:dirt_stew"
+  }
+}

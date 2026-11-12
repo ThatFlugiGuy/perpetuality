@@ -1,6 +1,7 @@
 package net.flugi.perpetuality.block.entity.custom;
 
 import net.flugi.perpetuality.Perpetuality;
+import net.flugi.perpetuality.block.custom.PotBlock;
 import net.flugi.perpetuality.block.entity.ModBlockEntities;
 import net.flugi.perpetuality.datagen.ModItemTagProvider;
 import net.flugi.perpetuality.item.ModItems;
@@ -15,21 +16,19 @@ import net.minecraft.inventory.Inventories;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.particle.SimpleParticleType;
 import net.minecraft.recipe.RecipeEntry;
-import net.minecraft.recipe.input.RecipeInput;
 import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.registry.tag.TagKey;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.state.property.EnumProperty;
-import net.minecraft.state.property.Properties;
 import net.minecraft.storage.ReadView;
 import net.minecraft.storage.WriteView;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
+import net.minecraft.util.math.random.Random;
+import net.minecraft.world.World;
 import org.jspecify.annotations.Nullable;
 
-import java.util.List;
+
 import java.util.Optional;
 
 public class PotBlockEntity extends BlockEntity {
@@ -43,22 +42,15 @@ public class PotBlockEntity extends BlockEntity {
 
 
     private int boilTimer = 0;
-    private boolean isReady = false;
 
 
 
 
-    /*
-    public void addIngredient(ItemStack stack) {
-
-        stewIngredients.addFirst(stack);
-        markDirty();
-
-    }*/
 
     public boolean addIngredient(@Nullable PlayerEntity entity, ItemStack stack) {
-            if (!(stack.isIn(ModItemTagProvider.STEW_INGREDIENTS)) || getIngredientCount()>=6) { return false; }
 
+            if (!(stack.isIn(ModItemTagProvider.STEW_INGREDIENTS)) || getIngredientCount()>=6) { return false; }
+        if (stack.getItem() == Items.MILK_BUCKET && !entity.isInCreativeMode()) { entity.giveOrDropStack(new ItemStack(Items.BUCKET));}
             stewIngredients.set(ingredientCount,stack.splitUnlessCreative(1,entity));
             markDirty();
             return true;
@@ -79,7 +71,7 @@ public boolean collectStew(@Nullable LivingEntity entity, ItemStack heldStack, S
         entity.giveOrDropStack(recipe.get().value().craft(recipeInput, serverWorld.getRegistryManager()));
     }
     else {
-        entity.giveOrDropStack(new ItemStack(ModItems.GENERIC_STEW));
+        entity.giveOrDropStack(new ItemStack(ModItems.PERPETUAL_STEW));
     }
 
     //i am not proud of this one
@@ -103,8 +95,6 @@ public boolean collectStew(@Nullable LivingEntity entity, ItemStack heldStack, S
                 ingredientCount++;
             }
         }
-        //Perpetuality.LOGGER.info(String.valueOf(ingredientCount));
-        //markDirty();
         return ingredientCount;
     }
 
@@ -133,5 +123,40 @@ public boolean collectStew(@Nullable LivingEntity entity, ItemStack heldStack, S
     public NbtCompound toInitialChunkDataNbt(RegistryWrapper.WrapperLookup registries) {
         return super.toInitialChunkDataNbt(registries);
     }
+
+    public static void tick(World world, BlockPos blockPos, BlockState blockState, PotBlockEntity entity) {
+
+        if (entity.boilTimer !=0) {
+            Random random = world.getRandom();
+            SimpleParticleType simpleParticleType = Perpetuality.BOIL_PARTICLE;
+            if (world instanceof ServerWorld serverWorld) {
+
+                serverWorld.spawnParticles(
+                        simpleParticleType,
+                        blockPos.getX() + 0.5 + (random.nextDouble() / 3.0 * (random.nextBoolean() ? 1 : -1))*0,
+                        blockPos.getY() + 4.5/16f,
+                        blockPos.getZ() + 0.5 + (random.nextDouble() / 3.0 * (random.nextBoolean() ? 1 : -1))*0,
+                        (int) (entity.boilTimer/120f *15 ) ,
+                        1.75/16f,
+                        0.07,
+                        1.75/16f,
+                        0.5
+                );
+
+
+            }
+        }
+
+        if (blockState.get(PotBlock.WATER) && entity.getIngredientCount() == 6) {
+            entity.boilTimer++;
+
+        }
+        if (entity.boilTimer >= 600) {
+            entity.boilTimer = 0;
+            world.setBlockState(blockPos, blockState.with(PotBlock.WATER, false).with(PotBlock.LEVEL, 6));
+            //Perpetuality.LOGGER.info("yo gurt your soup is ready");
+        }
+    }
+
 }
 

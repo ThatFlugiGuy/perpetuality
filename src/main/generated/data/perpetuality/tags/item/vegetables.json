@@ -1,6 +1,9 @@
 {
   "replace": true,
   "values": [
-    "minecraft:carrot"
+    "minecraft:carrot",
+    "minecraft:beetroot",
+    "minecraft:potato",
+    "minecraft:baked_potato"
   ]
 }

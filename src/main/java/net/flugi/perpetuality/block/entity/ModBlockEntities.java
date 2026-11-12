@@ -15,7 +15,7 @@ public class ModBlockEntities {
 
 
     public static final BlockEntityType<PotBlockEntity> POT_BLOCK_ENTITY =
-            register("pot_block", PotBlockEntity::new, ModBlocks.POT_BLOCK);
+            register("pot_block", PotBlockEntity::new, ModBlocks.CROCKPOT_BLOCK);
 
 
 

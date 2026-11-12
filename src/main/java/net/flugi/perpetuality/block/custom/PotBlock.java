@@ -1,12 +1,14 @@
 package net.flugi.perpetuality.block.custom;
 
 import com.mojang.serialization.MapCodec;
-import net.flugi.perpetuality.Perpetuality;
+import net.flugi.perpetuality.block.entity.ModBlockEntities;
 import net.flugi.perpetuality.block.entity.custom.PotBlockEntity;
 
+import net.flugi.perpetuality.item.ModItems;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.entity.LivingEntity;
+import net.minecraft.block.entity.BlockEntityTicker;
+import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.ai.pathing.NavigationType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
@@ -17,7 +19,6 @@ import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.IntProperty;
-import net.minecraft.state.property.Properties;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.BlockMirror;
@@ -34,8 +35,6 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 import org.jspecify.annotations.Nullable;
 import net.minecraft.item.Items;
-
-import static net.minecraft.item.BucketItem.getEmptiedStack;
 
 public class PotBlock extends BlockWithEntity {
 
@@ -84,7 +83,6 @@ public class PotBlock extends BlockWithEntity {
 
             //filling with water
             if (!IS_FULL && potBlockEntity.getIngredientCount() ==0 && stack.getItem() == Items.WATER_BUCKET){
-                Perpetuality.LOGGER.info("fille");
                 stack.decrementUnlessCreative(1, player);
                 if (!player.isInCreativeMode()){player.giveOrDropStack(new ItemStack(Items.BUCKET));}
                 world.setBlockState(pos, state.with(WATER, true));
@@ -95,11 +93,7 @@ public class PotBlock extends BlockWithEntity {
             // setup/first stew
 
             if (IS_FULL && potBlockEntity.addIngredient(player, stack)) {
-                if (potBlockEntity.getIngredientCount() == 6 ){
-                    world.setBlockState(pos, state.with(WATER, false).with(LEVEL, 6));
-                    Perpetuality.LOGGER.info("yo gurt your soup is ready");
-                }
-                player.sendMessage(Text.literal(String.valueOf(potBlockEntity.getStewIngredients())), true);
+                //player.sendMessage(Text.literal(String.valueOf(potBlockEntity.getStewIngredients())), true);
                 return ActionResult.SUCCESS_SERVER;
             }
 
@@ -107,8 +101,6 @@ public class PotBlock extends BlockWithEntity {
             // non setup normal perpetual stew shit
             if (potBlockEntity.getIngredientCount() >0 && !IS_FULL ) {
                 if ((potBlockEntity.addIngredient(player, stack) || potBlockEntity.collectStew( player, stack, (ServerWorld) world))) {
-                    player.sendMessage(Text.literal(String.valueOf(potBlockEntity.getStewIngredients())), true);
-                    Perpetuality.LOGGER.info(String.valueOf(potBlockEntity.getIngredientCount()));
                     world.setBlockState(pos, state.with(LEVEL, potBlockEntity.getIngredientCount()));
                     return ActionResult.SUCCESS_SERVER;
                 }
@@ -149,7 +141,6 @@ public class PotBlock extends BlockWithEntity {
 
 
     public static int getLuminance(BlockState currentBlockState) {
-
         return 10 ;
     }
 
@@ -169,7 +160,7 @@ public class PotBlock extends BlockWithEntity {
 
     @Override
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
-        if (random.nextInt(10) == 0) {
+        if (random.nextInt(20) == 0) {
             world.playSoundClient(
                     pos.getX() + 0.5,
                     pos.getY() + 0.5,
@@ -181,11 +172,22 @@ public class PotBlock extends BlockWithEntity {
                     false
             );
         }
+
     }
 
     @Override
     protected boolean canPathfindThrough(BlockState state, NavigationType type) {
         return false;
+    }
+
+    @Override
+    public @Nullable <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
+        return validateTicker(type, ModBlockEntities.POT_BLOCK_ENTITY, PotBlockEntity::tick);
+    }
+
+    @Override
+    protected ItemStack getPickStack(WorldView world, BlockPos pos, BlockState state, boolean includeData) {
+        return new ItemStack(ModItems.CROCKPOT);
     }
 }
 

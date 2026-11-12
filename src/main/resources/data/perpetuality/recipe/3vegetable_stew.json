@@ -1,0 +1,9 @@
+{
+  "type": "perpetuality:pot",
+  "ingredients": [
+    "#perpetuality:vegetables"
+  ],
+  "result": {
+    "id": "perpetuality:vegetable_stew"
+  }
+}

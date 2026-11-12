@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "show_notification": false,
+  "category": "misc",
+  "pattern": [
+    "C C",
+    "B B",
+    "BBB"
+  ],
+  "key": {
+    "C": "minecraft:copper_ingot",
+    "B": [
+      "minecraft:brick"
+    ]
+  },
+  "result": {
+    "id": "perpetuality:crockpot"
+  }
+}

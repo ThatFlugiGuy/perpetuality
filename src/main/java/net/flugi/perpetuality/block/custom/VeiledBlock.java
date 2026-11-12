@@ -1,13 +1,11 @@
 package net.flugi.perpetuality.block.custom;
 
-//import net.flugi.perpetuality.bulshittt.ModEntities;
+
 import net.minecraft.block.*;
-import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
-import net.minecraft.world.WorldView;
 
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -20,7 +18,9 @@ public class VeiledBlock extends TransparentBlock {
 
     private boolean hidden;
 
+    // HEY yo no peeking get away from here booo you, this is for v1 of the mod :P
 
+    //:: CONTRADICTORY :://
 
     public VeiledBlock(Settings settings, boolean hidden) {
         super(settings);

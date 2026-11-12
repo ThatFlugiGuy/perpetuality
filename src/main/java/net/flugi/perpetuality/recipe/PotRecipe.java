@@ -1,10 +1,13 @@
 package net.flugi.perpetuality.recipe;
 
+
+
 import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.*;
 import net.minecraft.recipe.book.RecipeBookCategory;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.world.World;
+
 
 import java.util.List;
 
@@ -32,7 +35,25 @@ public class PotRecipe implements Recipe<PotRecipeInput> {
     public boolean matches(PotRecipeInput input, World world) {
         // probably not the best way to do it but, it works soooooo
         // feel free to find a better solution if you want :sob:
+
+
+        //:: ISSUES LIST :://
+        // Single ingredient recipes just do whatever
+        //        ex: if meat + other ingredient = no recipe
+        //              result is meat stew (should be perpetual instead)
+        // Fruit compote not craftable either, related to previous issue
+        // this all makes perpetual stew basically unobtainable unless you really try
+
+
         boolean conditionmet;
+
+        if (ingredients.size() == 1) {
+            conditionmet = false;
+            for (int i = 0; i < input.size(); i++) {
+                conditionmet = conditionmet || ingredients.getFirst().test(input.getStackInSlot(i));
+            }
+            return conditionmet;
+        }
         boolean should = true;
         for (Ingredient condition : ingredients) {
             conditionmet = false;
@@ -74,4 +95,11 @@ public class PotRecipe implements Recipe<PotRecipeInput> {
     public boolean isIgnoredInRecipeBook() {
         return true;
     }
+
+
+
+
+
+
+
 }

@@ -1,0 +1,9 @@
+{
+  "type": "perpetuality:pot",
+  "ingredients": [
+    "#perpetuality:fruits"
+  ],
+  "result": {
+    "id": "perpetuality:fruit_compote"
+  }
+}

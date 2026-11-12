@@ -1,0 +1,9 @@
+{
+  "type": "perpetuality:pot",
+  "ingredients": [
+    "minecraft:chorus_fruit"
+  ],
+  "result": {
+    "id": "perpetuality:chorus_compote"
+  }
+}

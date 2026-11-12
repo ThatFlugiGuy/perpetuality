@@ -1,5 +1,7 @@
 // 1.21.11	-999999999-01-01T00:00:00	Perpetuality/Tags for minecraft:item
-4bf8a4cbaa4e318ef38ea546f048786afb5b7117 data/perpetuality/tags/item/meats.json
-396f350a71c9761320b704ef097c08b722b28f42 data/perpetuality/tags/item/stew_ingredients.json
-9b560267957223c97b39776778fe76990de27b32 data/perpetuality/tags/item/taglasso.json
-c9fc48ca1cd81d0e7a2087c4b435bd5708d9c516 data/perpetuality/tags/item/vegetables.json
+8b3257b7dd43243c7b4318591c7ae1755abb8ca7 data/perpetuality/tags/item/fruits.json
+411f0613331567a29ec9eb43a64b4c30cf5d8c7b data/perpetuality/tags/item/meats.json
+ed5ab8180c3393d20658a05ffc90472c4921e8eb data/perpetuality/tags/item/mushrooms.json
+6d3d073efa1b20096a8ea8be6d0d9d10ac309192 data/perpetuality/tags/item/stew_ingredients.json
+e47ef397fec249223d320c988ac939abdb8186aa data/perpetuality/tags/item/taglasso.json
+2e9525eb1b0d713276c3ae9733b07de3f3f93ba8 data/perpetuality/tags/item/vegetables.json

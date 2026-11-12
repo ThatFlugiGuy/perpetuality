@@ -1,0 +1,23 @@
+{
+  "block.perpetuality.block_paradigm": "Paradigm",
+  "item.perpetuality.apple_compote": "Apple Compote",
+  "item.perpetuality.borscht": "Borscht",
+  "item.perpetuality.bread_soup": "Bread & Water Soup",
+  "item.perpetuality.chorus_compote": "Chorus Fruit Compote",
+  "item.perpetuality.cocoa_cereal": "Cocoa Cereal",
+  "item.perpetuality.crockpot": "Crockpot",
+  "item.perpetuality.dirt_stew": "Dirt Stew",
+  "item.perpetuality.fruit_compote": "Fruit Compote",
+  "item.perpetuality.fruit_porridge": "Fruit Porridge",
+  "item.perpetuality.glow_berry_compote": "Glow Berry Compote",
+  "item.perpetuality.kelp_stew": "Kelp Stew",
+  "item.perpetuality.mashed_potatoes": "Mashed Potatoes",
+  "item.perpetuality.meat_stew": "Meat Stew",
+  "item.perpetuality.perpetual_stew": "Perpetual Stew",
+  "item.perpetuality.porridge": "Porridge",
+  "item.perpetuality.sweet_berry_compote": "Sweet Berry Compote",
+  "item.perpetuality.vegetable_stew": "Vegetable Stew",
+  "itemGroup.perpetuality": "Perpetuality",
+  "itemToolTip.perpetuality.crockpot_item": "Place over a campfire to start cooking",
+  "sounds.perpetuality.water_boil": "Water boils"
+}
