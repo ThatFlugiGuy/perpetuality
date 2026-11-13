@@ -3,15 +3,14 @@
 	"id": "perpetuality",
 	"version": "${version}",
 	"name": "Perpetuality",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "A simple cooking mod about perpetual stew !!",
 	"authors": [
-		"Me!"
+		"ThatFlugiGuy"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"evil github repo": "https://github.com/ThatFlugiGuy/perpetuality/"
 	},
-	"license": "CC0-1.0",
+	"license": "ARR",
 	"icon": "assets/perpetuality/icon.png",
 	"environment": "*",
 	"entrypoints": {

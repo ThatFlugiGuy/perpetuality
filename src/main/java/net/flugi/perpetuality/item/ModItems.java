@@ -26,35 +26,35 @@ public class ModItems {
 
     // stews type shit
     public static final Item PERPETUAL_STEW = register("perpetual_stew", Item::new, new
-            Item.Settings().food(ModFoodComponents.PERPETUAL_STEW).maxCount(16).useRemainder(Items.BOWL));
+            Item.Settings().food(ModFoodComponents.PERPETUAL_STEW, ModFoodComponents.DRINK).maxCount(16).useRemainder(Items.BOWL));
     public static final Item MEAT_STEW = register("meat_stew", Item::new, new
-            Item.Settings().food(ModFoodComponents.MEAT_STEW).maxCount(16).useRemainder(Items.BOWL));
+            Item.Settings().food(ModFoodComponents.MEAT_STEW, ModFoodComponents.FOOD).maxCount(16).useRemainder(Items.BOWL));
     public static final Item VEGETABLE_STEW = register("vegetable_stew", Item::new, new
-            Item.Settings().food(ModFoodComponents.VEGETABLE_STEW).maxCount(16).useRemainder(Items.BOWL));
+            Item.Settings().food(ModFoodComponents.VEGETABLE_STEW, ModFoodComponents.FOOD).maxCount(16).useRemainder(Items.BOWL));
     public static final Item KELP_STEW = register("kelp_stew", Item::new, new
-            Item.Settings().food(ModFoodComponents.KELP_STEW).maxCount(16).useRemainder(Items.BOWL));
+            Item.Settings().food(ModFoodComponents.KELP_STEW, ModFoodComponents.DRINK).maxCount(16).useRemainder(Items.BOWL));
     public static final Item DIRT_STEW = register("dirt_stew", Item::new, new
-            Item.Settings().food(ModFoodComponents.DIRT_STEW).maxCount(16).useRemainder(Items.BOWL));
+            Item.Settings().food(ModFoodComponents.DIRT_STEW, ModFoodComponents.GIVES_HUNGER).maxCount(16).useRemainder(Items.BOWL));
     public static final Item BORSCHT = register("borscht", Item::new, new
-            Item.Settings().food(ModFoodComponents.BORSCHT).maxCount(16).useRemainder(Items.BOWL));
+            Item.Settings().food(ModFoodComponents.BORSCHT, ModFoodComponents.DRINK).maxCount(16).useRemainder(Items.BOWL));
     public static final Item PORRIDGE = register("porridge", Item::new, new
-            Item.Settings().food(ModFoodComponents.PORRIDGE).maxCount(16).useRemainder(Items.BOWL));
+            Item.Settings().food(ModFoodComponents.PORRIDGE, ModFoodComponents.FOOD).maxCount(16).useRemainder(Items.BOWL));
     public static final Item FRUIT_PORRIDGE = register("fruit_porridge", Item::new, new
-            Item.Settings().food(ModFoodComponents.FRUIT_PORRIDGE).maxCount(16).useRemainder(Items.BOWL));
+            Item.Settings().food(ModFoodComponents.FRUIT_PORRIDGE, ModFoodComponents.FOOD).maxCount(16).useRemainder(Items.BOWL));
     public static final Item MASHED_POTATOES = register("mashed_potatoes", Item::new, new
-            Item.Settings().food(ModFoodComponents.MASHED_POTATOES).maxCount(16).useRemainder(Items.BOWL));
+            Item.Settings().food(ModFoodComponents.MASHED_POTATOES, ModFoodComponents.FOOD).maxCount(16).useRemainder(Items.BOWL));
     public static final Item COCOA_CEREAL = register("cocoa_cereal", Item::new, new
-            Item.Settings().food(ModFoodComponents.COCOA_CEREAL).maxCount(16).useRemainder(Items.BOWL));
+            Item.Settings().food(ModFoodComponents.COCOA_CEREAL, ModFoodComponents.COCOA).maxCount(16).useRemainder(Items.BOWL));
     public static final Item BREAD_SOUP = register("bread_soup", Item::new, new
-            Item.Settings().food(ModFoodComponents.BREAD_SOUP).maxCount(16).useRemainder(Items.BOWL));
+            Item.Settings().food(ModFoodComponents.BREAD_SOUP, ModFoodComponents.DRINK).maxCount(16).useRemainder(Items.BOWL));
     public static final Item APPLE_COMPOTE = register("apple_compote", Item::new, new
-            Item.Settings().food(ModFoodComponents.APPLE_COMPOTE).maxCount(16).useRemainder(Items.BOWL));
+            Item.Settings().food(ModFoodComponents.APPLE_COMPOTE, ModFoodComponents.REGEN).maxCount(16).useRemainder(Items.BOWL));
     public static final Item CHORUS_COMPOTE = register("chorus_compote", Item::new, new
-            Item.Settings().food(ModFoodComponents.CHORUS_COMPOTE).maxCount(16).useRemainder(Items.BOWL));
+            Item.Settings().food(ModFoodComponents.CHORUS_COMPOTE, ModFoodComponents.CHORUS).maxCount(16).useRemainder(Items.BOWL));
     public static final Item GLOW_BERRY_COMPOTE = register("glow_berry_compote", Item::new, new
-            Item.Settings().food(ModFoodComponents.GLOW_BERRY_COMPOTE).maxCount(16).useRemainder(Items.BOWL));
+            Item.Settings().food(ModFoodComponents.GLOW_BERRY_COMPOTE, ModFoodComponents.GLOW).maxCount(16).useRemainder(Items.BOWL));
     public static final Item SWEET_BERRY_COMPOTE = register("sweet_berry_compote", Item::new, new
-            Item.Settings().food(ModFoodComponents.SWEET_BERRY_COMPOTE).maxCount(16).useRemainder(Items.BOWL));
+            Item.Settings().food(ModFoodComponents.SWEET_BERRY_COMPOTE, ModFoodComponents.SPEED).maxCount(16).useRemainder(Items.BOWL));
     public static final Item FRUIT_COMPOTE = register("fruit_compote", Item::new, new
             Item.Settings().food(ModFoodComponents.FRUIT_COMPOTE).maxCount(16).useRemainder(Items.BOWL));
 
